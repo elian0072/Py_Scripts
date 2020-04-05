@@ -18,10 +18,10 @@ GPIO.setwarnings(False)  # Disable warning at runtime
 RGB = [11,13,15]         # Set a list for the RGB GPIO Pin
 
 
-## Sets pin each pins to output and to HIGH
+## Sets pin each pins to output and to LOW
 for pin in RGB:
 	GPIO.setup(pin, GPIO.OUT)
-	GPIO.output(pin, 1)
+	GPIO.output(pin, 0)
 
 
 
@@ -30,7 +30,7 @@ def validColor(aColor):
 	#print(aColor)
 	result = True
 	for bit in aColor:
-		print(bit)
+		#print(bit)
 		if (bit != "0" and  bit != "1"):
 			return  False
 
@@ -54,7 +54,7 @@ except KeyboardInterrupt:
 	GPIO.cleanup()
 	exit
 finally:
-	print("Goodbye!")
+	print("Goodbye! \n")
 
 
 
